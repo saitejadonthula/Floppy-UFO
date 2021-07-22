@@ -21,7 +21,7 @@ y = parseInt(window.getComputedStyle(y).getPropertyValue("margin-top"));
 var y2 = y+hei/10;
 var l = wid - wid/5;
 var r = wid + wid/5;
-var p = 1 ;
+var p = 1*(300/hei);
 var stopvar;
 function declareVar(){
 	stopvar = window.setInterval(game,100);
@@ -47,9 +47,9 @@ function game(){
 function fun(t){
 	if(p>0) t = t+p*p;
 	else t-=p*p;
-	p += 0.25;
+	p += 0.25*(300/hei);
 	return t;
 }
 function ip(){
-	p = -3;
+	p = -3*(300/hei);
 }
