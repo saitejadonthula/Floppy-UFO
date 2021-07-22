@@ -1,0 +1,30 @@
+:root{
+	--hei : 100vh;
+	--wid : 100vw;
+}
+#box{
+	height: var(--hei);
+	width: var(--wid);
+	background-color: skyblue;
+	border: 2px solid black;
+	margin: auto;
+	color: green;
+	font-size: 5em;
+	object-position: centre;
+
+}
+#bird{
+	height: 5vh;
+	width: 10vw;
+	background-color: black;
+	position: relative;
+	margin-left: 31.6vw;
+	margin-top: 22.5vh;
+}
+#bu{
+	height: 10vh;
+	width: 20vw;
+	margin-left: 40vw;
+	margin-top: 10vw;
+	color: green;
+}
