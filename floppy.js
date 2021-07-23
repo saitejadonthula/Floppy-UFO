@@ -11,7 +11,6 @@ function start(){
 	bol = (parseInt(window.getComputedStyle(document.getElementById("one")).getPropertyValue("width")));
 	document.getElementById("box").style.height = (hei).toString().concat("px");
 	document.getElementById("box").style.width = (wid).toString().concat("px");
-	console.log(hei/2);
 	var x = document.createElement("button");
 	x.setAttribute("onclick","declareVar()");
 	x.setAttribute("id","bu");
@@ -33,7 +32,6 @@ var l = wid-parseInt(window.getComputedStyle(document.getElementById("bird")).ge
 var r ;
 var p = 10*(hei/500) ;
 var tme = 0.5;
-console.log(typeof(p*a*tme+p)); 
 var stopvar;
 var stopeni,stoptrans;
 var t;
@@ -42,7 +40,6 @@ function declareVar(){
 	stopvar = window.setInterval(game,100);
 	document.getElementById("bu").innerHTML="jump";
 	document.getElementById("bu").setAttribute("onclick","ip()");
-
 	stopeni = window.setInterval(enemy,3500);
 	stoptrans = window.setInterval(animate,60);
 }
@@ -82,7 +79,6 @@ var coun = 1;
 var oh = hei*(2/5);
 function enemy(){
 	let w = document.getElementById("one");
-	console.log(w);
 	oh = Math.random()*70;
 	w.style.setProperty("right","0px");
 	clearInterval(stoptrans);
@@ -97,20 +93,10 @@ function animate() {
 
 	var u = parseInt(window.getComputedStyle(document.getElementById("one")).getPropertyValue("right"));
 	if(u+bol>=wid) return;
-	document.getElementById("one").style.right = (u+ani).toString().concat("px"); //setProperty("right",(u+ani).toString().concat("px"));
+	document.getElementById("one").style.right = (u+ani).toString().concat("px"); 
 	var u2 = parseInt(window.getComputedStyle(document.getElementById("two")).getPropertyValue("right"));
-	document.getElementById("two").style.right = (u2+ani).toString().concat("px");//setProperty("right",(u+ani).toString().concat("px"));
-	console.log("animate start")	;
-	console.log(u+ani+bol);
-	console.log(l);
-	console.log(u+ani);
-	console.log(r);
+	document.getElementById("two").style.right = (u2+ani).toString().concat("px");
 	if((u+ani+bol<=l&&u+ani+bol>=r)||(u+ani<=l&&u+ani>=r)) {
-		console.log("animate end");
-		console.log(y);
-		console.log(oh+hei/2);
-		console.log(oh);
-		console.log(y2);
 		if(y<=oh||y2>=oh+hei/2) {
 			y=0;
 			document.getElementById("bird").style.setProperty("background-color","yellow");
